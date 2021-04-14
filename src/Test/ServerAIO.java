@@ -32,11 +32,12 @@ public class ServerAIO {
 
     public void start(){
         try {
+            //AsyncChannelGroup：可以被多个异步通道共享的资源群组：线程池
             serverChannel=AsynchronousServerSocketChannel.open();
             serverChannel.bind(new InetSocketAddress(LOCALHOST,DEFAULT_PORT));
             System.out.println("启动服务器，监听端口"+DEFAULT_PORT+"...");
 
-            serverChannel.accept(null, new CompletionHandler<AsynchronousSocketChannel, Object>() {
+            serverChannel.accept(null, new CompletionHandler<AsynchronousSocketChannel, Object>() {//①
                 @Override
                 public void completed(AsynchronousSocketChannel clientChannel, Object attachment) {
                     if(serverChannel.isOpen()){
@@ -47,11 +48,10 @@ public class ServerAIO {
                     info.put("type","read");
                     info.put("buffer",buffer);
                     ClientHandler handler=new ClientHandler(clientChannel);
-                    clientChannel.read(buffer, info,handler);
+                    clientChannel.read(buffer, info,handler);//②
                 }
                 @Override
                 public void failed(Throwable exc, Object attachment) {
-
                 }
             });
 
@@ -84,19 +84,18 @@ public class ServerAIO {
                 buffer.flip();
                 //下一步执行"write"事件
                 info.put("type","write");
-                clientChannel.write(buffer,info,this);
+                clientChannel.write(buffer,info,this);//③
                 buffer.clear();
             }else if("write".equals(type)){
                 ByteBuffer buffer = ByteBuffer.allocate(1024);
                 info.put("type","read");
                 info.put("buffer",buffer);
                 //下一步执行"read"事件
-                clientChannel.read(buffer,info,this);
+                clientChannel.read(buffer,info,this);//④
             }
         }
         @Override
         public void failed(Throwable exc, Object attachment) {
-
         }
     }
 

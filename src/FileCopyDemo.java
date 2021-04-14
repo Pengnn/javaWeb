@@ -128,7 +128,6 @@ public class FileCopyDemo {
             public void copyFile(File source, File target) {
                 FileChannel fin=null;
                 FileChannel fout=null;
-
                 try {
                     fin=new FileInputStream(source).getChannel();
                     fout=new FileOutputStream(target).getChannel();
@@ -145,7 +144,6 @@ public class FileCopyDemo {
                     close(fout);
                 }
             }
-
             @Override
             public String toString() {
                 return "nioChannelTransferCopy";
@@ -161,5 +159,4 @@ public class FileCopyDemo {
         benchmark(nioChannelTransferCopy,source,target);
        // nioChannelBufferCopy.copyFile(source,target);
     }
-
 }

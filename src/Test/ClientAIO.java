@@ -56,6 +56,8 @@ public class ClientAIO {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
+        }finally {
+            close(clientChannel);
         }
     }
 
