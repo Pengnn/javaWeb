@@ -1,4 +1,4 @@
-package clientBIO;
+package juiClientBIO;
 
 import java.io.BufferedReader;
 import java.io.IOException;

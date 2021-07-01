@@ -1,4 +1,4 @@
-package serverBIO;
+package juiServerBIO;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

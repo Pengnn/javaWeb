@@ -1,4 +1,4 @@
-package clientBIO;
+package juiClientBIO;
 
 import java.io.*;
 import java.net.Socket;

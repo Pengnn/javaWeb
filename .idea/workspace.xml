@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6cfae94-f525-46fe-a21c-60f4cbcc9b42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileCopyDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileCopyDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/ClientAIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/ClientAIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/ServerAIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/ServerAIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/TcpClientDemo02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/TcpClientDemo02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/TcpServiceDemo02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/TcpServiceDemo02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientBIO/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientBIO/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientNIO/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientNIO/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientNIO/UserInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientNIO/UserInputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverBIO/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverBIO/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverNIO/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverNIO/ChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientBIO/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/juiClientBIO/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientBIO/UserInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/juiClientBIO/UserInputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverBIO/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/juiServerBIO/ChatHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverBIO/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/juiServerBIO/ChatServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +44,12 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/juiChat/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -66,8 +59,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\15801\IdeaProjects\javaWeb\juiChat\src" />
       <recent name="C:\Users\15801\IdeaProjects\javaWeb\src" />
+      <recent name="C:\Users\15801\IdeaProjects\javaWeb\juiChat\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\15801\IdeaProjects\javaWeb" />
@@ -76,30 +69,18 @@
       <recent name="C:\Users\15801\IdeaProjects\javaWeb\.idea" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="juiClientBIO" />
       <recent name="clientAIO" />
       <recent name="clientNIO" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ChatClient">
+  <component name="RunManager" selected="Application.JuiChatClient">
     <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clientNIO.ChatClient" />
       <module name="javaWeb" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="clientNIO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="clientBIO.ChatClient" />
-      <module name="juiChat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="clientBIO.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,12 +127,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="serverBIO.ChatServer" />
+    <configuration name="JframeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JframeTest" />
+      <module name="juiChat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JuiChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="juiClientBIO.JuiChatClient" />
       <module name="juiChat" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="serverBIO.*" />
+          <option name="PATTERN" value="juiClientBIO.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,9 +147,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JframeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JframeTest" />
+    <configuration name="JuiChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="juiServerBIO.JuiChatServer" />
       <module name="juiChat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="juiServerBIO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -193,16 +187,16 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ChatClient" />
       <item itemvalue="Application.UDPProvider" />
       <item itemvalue="Application.ChatServer (1)" />
       <item itemvalue="Application.JframeTest" />
-      <item itemvalue="Application.ChatServer" />
+      <item itemvalue="Application.JuiChatClient" />
+      <item itemvalue="Application.JuiChatServer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ChatClient" />
-        <item itemvalue="Application.ChatServer" />
+        <item itemvalue="Application.JuiChatClient" />
+        <item itemvalue="Application.JuiChatServer" />
         <item itemvalue="Application.JframeTest" />
         <item itemvalue="Application.ChatClient" />
         <item itemvalue="Application.ChatServer (1)" />
@@ -235,7 +229,7 @@
       <workItem from="1622516183776" duration="6279000" />
       <workItem from="1622598045659" duration="604000" />
       <workItem from="1624601367934" duration="12610000" />
-      <workItem from="1625109245689" duration="9330000" />
+      <workItem from="1625109245689" duration="10336000" />
     </task>
     <task id="LOCAL-00001" summary="BIO\NIO实现多人聊天室，文件复制，AIO实现回音壁">
       <created>1618315025907</created>
@@ -265,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618383858609</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="JFrame使用窗口发送消息">
+      <created>1625120435648</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625120435648</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +287,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="BIO\NIO实现多人聊天室，文件复制，AIO实现回音壁" />
     <MESSAGE value="AIO多人聊天室实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="AIO多人聊天室实现" />
+    <MESSAGE value="JFrame使用窗口发送消息" />
+    <option name="LAST_COMMIT_MESSAGE" value="JFrame使用窗口发送消息" />
   </component>
 </project>
