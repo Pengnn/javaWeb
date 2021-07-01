@@ -43,8 +43,8 @@ public class ChatServer {
         if(socket!=null){
             int port = socket.getPort();
             if(connectedClients.containsKey(port)){
-                connectedClients.get(port).close();
-                connectedClients.remove(port);
+                connectedClients.get(port).close();//关闭服务器端下线用户对应的输出流
+                connectedClients.remove(port);//移除下线用户
                 System.out.println("客户端["+port+"]已断开连接");
             }
         }
@@ -78,9 +78,9 @@ public class ChatServer {
             System.out.println("启动服务器，监听端口"+DEFAULT_PORT+"...");
             while(true){
                 //等待客户端的连接
-                Socket socket = serverSocket.accept();
+                Socket socket = serverSocket.accept();//从已建立连接的队列中取出一个连接，如果没有就阻塞
                 //创建ChatHandler线程
-                executorService.execute(new ChatHandler(this,socket));
+                executorService.execute(new ChatHandler(this,socket));//每个连接都开启一个线程
                // new Thread(new ChatHandler(this,socket)).start();
             }
         } catch (IOException exception) {

@@ -66,7 +66,7 @@ public class ChatClient {
         //CONENCT事件：连接就绪事件
         if(key.isConnectable()){
             SocketChannel client = (SocketChannel) key.channel();
-            if(client.isConnectionPending()){
+            if(client.isConnectionPending()){//判断此通道上是否正在进行连接操作,当且仅当已在此通道上发起连接操作，但是尚未通过调用 finishconnect 方法完成连接时才返回 true
                 client.finishConnect();
                 //连接建立，新建线程处理用户输入
                 new Thread(new UserInputHandler(this)).start();
@@ -88,15 +88,15 @@ public class ChatClient {
         }
     }
     private String receive(SocketChannel client) throws IOException {
-        rBuffer.clear();
+        rBuffer.clear();//切换到写模式
         while(client.read(rBuffer)>0);
-        rBuffer.flip();
+        rBuffer.flip();//切换到读模式
         return String.valueOf(charset.decode(rBuffer));
     }
     public void send(String msg) throws IOException {
-        wBuffer.clear();
+        wBuffer.clear();//切换到写模式
         wBuffer.put(charset.encode(msg));
-        wBuffer.flip();
+        wBuffer.flip();//切换到读模式
         while(wBuffer.hasRemaining()){
             client.write(wBuffer);//把wBuffer中的信息写入SocketChannel
         }

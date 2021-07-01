@@ -41,9 +41,10 @@ public class FileCopyDemo {
                     fin=new FileInputStream(source);
                     fout=new FileOutputStream(target);
                     int len;
-                    while((len=fin.read())!=1){
-                        fout.write(len);
+                    while((len=fin.read())!=-1){
+                       fout.write(len);
                     }
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException exception) {
@@ -64,11 +65,10 @@ public class FileCopyDemo {
             public void copyFile(File source, File target) {
                 InputStream fin=null;
                 OutputStream fout=null;
-
                 try {
                     fin=new BufferedInputStream(new FileInputStream(source));
                     fout=new BufferedOutputStream(new FileOutputStream(target));
-                    byte[] buffer = new byte[1024];
+                    byte[] buffer = new byte[1024];//通过缓冲区读写
                     int len;
                     while((len=fin.read(buffer))!=-1){
                         fout.write(buffer,0,len);
@@ -99,23 +99,23 @@ public class FileCopyDemo {
                     fout=new FileOutputStream(target).getChannel();
 
                     ByteBuffer buffer= ByteBuffer.allocate(1024);
-                    while(fin.read(buffer)!=-1){//写模式
+                    while(fin.read(buffer)!=-1){//写模式，写到buffer中
                        //切换到读模式
                        buffer.flip();
                        while(buffer.hasRemaining()){
-                           fout.write(buffer);
+                           fout.write(buffer);//从buffer中读取数据写到channel
                        }
                        //读模式切换到写模式
                         buffer.clear();
                     }
-                } catch (FileNotFoundException e) {
+              } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException exception) {
                     exception.printStackTrace();
                 }finally {
                     close(fin);
                     close(fout);
-                }
+                 }
             }
 
             @Override
@@ -149,11 +149,12 @@ public class FileCopyDemo {
                 return "nioChannelTransferCopy";
             }
         };
-        File source=new File("D:\\Program Files\\spring-5.3.2-dist.zip");
-        File target=new File("target.zip");
+        File source=new File("E:\\studing\\java\\JVM\\test.zip");
+       // File source=new File("D:\\Program Files\\spring-5.3.2-dist.zip");
+       File target=new File("target.zip");
 
         System.out.println("-----Copying file-----");
-        benchmark(noBufferStreamCopy,source,target);
+       benchmark(noBufferStreamCopy,source,target);
         benchmark(bufferStreamCopy,source,target);
         benchmark(nioChannelBufferCopy,source,target);
         benchmark(nioChannelTransferCopy,source,target);

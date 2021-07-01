@@ -24,6 +24,7 @@ public class ChatClient {
         }
     }
 
+    //接收来自服务器的消息
     public String receive() throws IOException {
         String msg=null;
         if(!socket.isInputShutdown()){
@@ -51,7 +52,7 @@ public class ChatClient {
             reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             //用户输入
-            new Thread(new UserInputHandler(this)).start();
+            new Thread(new UserInputHandler(this)).start();//用户输入肯定是要在另外的线程进行的
             //接收服务器转发的消息
             String msg=null;
             while((msg=receive())!=null){

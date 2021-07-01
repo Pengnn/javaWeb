@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6cfae94-f525-46fe-a21c-60f4cbcc9b42" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileCopyDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileCopyDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/ClientAIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/ClientAIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/ServerAIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/ServerAIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/TcpClientDemo02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/TcpClientDemo02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/TcpServiceDemo02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/TcpServiceDemo02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientBIO/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientBIO/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientNIO/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientNIO/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientNIO/UserInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientNIO/UserInputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverBIO/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverBIO/ChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverNIO/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverNIO/ChatServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +33,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1qmDNjfwHKCIIdwqh0V6EhMAPsa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -37,21 +56,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/juiChat/src" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.other" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\15801\IdeaProjects\javaWeb\juiChat\src" />
       <recent name="C:\Users\15801\IdeaProjects\javaWeb\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\15801\IdeaProjects\javaWeb" />
       <recent name="C:\Users\15801\IdeaProjects\javaWeb\src" />
+      <recent name="C:\Users\15801\IdeaProjects\javaWeb\src\Test" />
       <recent name="C:\Users\15801\IdeaProjects\javaWeb\.idea" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -60,6 +81,32 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.ChatClient">
+    <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clientNIO.ChatClient" />
+      <module name="javaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientNIO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clientBIO.ChatClient" />
+      <module name="juiChat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientBIO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clientAIO.ChatClient" />
       <module name="javaWeb" />
@@ -73,19 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChatClient（1）" type="Application" factoryName="Application" singleton="false" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="clientNIO.ChatClient" />
-      <module name="javaWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="clientNIO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clientNIO.ChatClient" />
       <module name="javaWeb" />
@@ -99,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ChatServer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="serverAIO.ChatServer" />
       <module name="javaWeb" />
       <extension name="coverage">
@@ -112,12 +146,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientAIO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test.ClientAIO" />
-      <module name="javaWeb" />
+    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="serverBIO.ChatServer" />
+      <module name="juiChat" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Test.*" />
+          <option name="PATTERN" value="serverBIO.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,12 +159,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerAIO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test.ServerAIO" />
+    <configuration name="JframeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JframeTest" />
+      <module name="juiChat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UDPProvider" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="udp.UDPProvider" />
       <module name="javaWeb" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Test.*" />
+          <option name="PATTERN" value="udp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,31 +179,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ChatClient（1）" />
-      <item itemvalue="Application.ServerAIO" />
-      <item itemvalue="Application.ClientAIO" />
-      <item itemvalue="Application.ChatServer" />
       <item itemvalue="Application.ChatClient" />
+      <item itemvalue="Application.UDPProvider" />
+      <item itemvalue="Application.ChatServer (1)" />
+      <item itemvalue="Application.JframeTest" />
+      <item itemvalue="Application.ChatServer" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ChatClient" />
         <item itemvalue="Application.ChatServer" />
-        <item itemvalue="Application.ClientAIO" />
-        <item itemvalue="Application.ServerAIO" />
-        <item itemvalue="Application.ChatClient（1）" />
+        <item itemvalue="Application.JframeTest" />
+        <item itemvalue="Application.ChatClient" />
+        <item itemvalue="Application.ChatServer (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +224,18 @@
       <workItem from="1618196713916" duration="542000" />
       <workItem from="1618197686642" duration="18511000" />
       <workItem from="1618278594917" duration="20314000" />
-      <workItem from="1618365086075" duration="11733000" />
+      <workItem from="1618365086075" duration="12122000" />
+      <workItem from="1618553419271" duration="1680000" />
+      <workItem from="1618834656214" duration="631000" />
+      <workItem from="1621518376350" duration="910000" />
+      <workItem from="1621557521727" duration="22095000" />
+      <workItem from="1621643500652" duration="28514000" />
+      <workItem from="1622123377207" duration="996000" />
+      <workItem from="1622165089961" duration="25000" />
+      <workItem from="1622516183776" duration="6279000" />
+      <workItem from="1622598045659" duration="604000" />
+      <workItem from="1624601367934" duration="12610000" />
+      <workItem from="1625109245689" duration="9330000" />
     </task>
     <task id="LOCAL-00001" summary="BIO\NIO实现多人聊天室，文件复制，AIO实现回音壁">
       <created>1618315025907</created>
@@ -204,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618382974545</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="AIO多人聊天室实现">
+      <created>1618383858609</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618383858609</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

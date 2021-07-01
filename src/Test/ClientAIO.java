@@ -41,14 +41,14 @@ public class ClientAIO {
                  String in = consoleReader.readLine();
                  byte[] inBytes = in.getBytes();
                  ByteBuffer buffer = ByteBuffer.wrap(inBytes);
-                 Future<Integer> writeResult = clientChannel.write(buffer);
-                 writeResult.get();
-                 //buffer.clear();//切换到写模式
-                //buffer.flip();
-                 Future<Integer> readResult = clientChannel.read(buffer);
+                 buffer.flip();//切换到读模式
+                 Future<Integer> writeResult = clientChannel.write(buffer);//写入channel
+                 writeResult.get();//阻塞式调用等待结果返回
+                 buffer.clear();//切换到写模式
+                Future<Integer> readResult = clientChannel.read(buffer);//从channel中读到buffer
                  readResult.get();
                  System.out.println(new String(buffer.array()));
-                 buffer.clear();
+               //  buffer.clear();
             }
         } catch (IOException exception) {
             exception.printStackTrace();

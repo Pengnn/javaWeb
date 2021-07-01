@@ -19,9 +19,11 @@ public class TcpServiceDemo02 {
         byte[] buffer = new byte[1024];
         int len;
         while((len=is.read(buffer))!=-1){
-            fos.write(buffer,0,len);
+            fos.write(buffer,0,len);//写入到文件输出流
         }
-
+//        System.out.println("socket.isConnected()"+socket.isConnected());//true
+//        System.out.println("socket.isOutputShutdown()"+socket.isOutputShutdown());//false
+//        System.out.println("socket.isInputShutdown()"+socket.isInputShutdown());//false
         OutputStream os = socket.getOutputStream();
         os.write("服务器接收完毕了，客户端可以断开了".getBytes());
 

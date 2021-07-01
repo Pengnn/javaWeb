@@ -54,14 +54,14 @@ public class ServerAIO {
                 public void failed(Throwable exc, Object attachment) {
                 }
             });
-
-            while(true){
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+            System.in.read();
+//            while(true){
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
         } catch (IOException exception) {
             exception.printStackTrace();
         }finally {
@@ -81,17 +81,17 @@ public class ServerAIO {
             if("read".equals(type)){
                 //借助Buffer，可读事件需要把数据写入客户端的通道中
                 ByteBuffer buffer = (ByteBuffer) info.get("buffer");
-                buffer.flip();
                 //下一步执行"write"事件
                 info.put("type","write");
-                clientChannel.write(buffer,info,this);//③
+                buffer.flip();
+                clientChannel.write(buffer,info,this);//③scr,attachment,handler
                 buffer.clear();
             }else if("write".equals(type)){
                 ByteBuffer buffer = ByteBuffer.allocate(1024);
                 info.put("type","read");
                 info.put("buffer",buffer);
                 //下一步执行"read"事件
-                clientChannel.read(buffer,info,this);//④
+                clientChannel.read(buffer,info,this);//④dest,attachment,handler
             }
         }
         @Override

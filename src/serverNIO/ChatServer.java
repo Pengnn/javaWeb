@@ -78,15 +78,15 @@ public class ChatServer {
             String fwdMsg=receive(client);
             if(fwdMsg.isEmpty()){//等价于length（）=0
                 key.cancel();
-                selector.wakeup();
+                selector.wakeup();//wakeup()用于唤醒阻塞在select上的线程
             }else{
                 //正常
                 System.out.println(getClientName(client)+":"+fwdMsg);
                 forwardMessage(client,fwdMsg);
                 //检查客户端否要退出
                 if(isToQuit(fwdMsg)){
-                    key.cancel();
-                    selector.wakeup();
+                    key.cancel();//如果退出就取消监听事件
+                    selector.wakeup();//wakeup用于唤醒阻塞在select方法上的线程
                     System.out.println(getClientName(client)+"已断开");
                 }
             }
@@ -95,15 +95,15 @@ public class ChatServer {
 
     //服务器转发消息给其它客户端
     private void forwardMessage(SocketChannel client, String fwdMsg) throws IOException {
-        for(SelectionKey key:selector.keys()){
-            Channel connectClient=key.channel();
-            if(connectClient instanceof ServerSocketChannel){
+        for(SelectionKey key:selector.keys()){//遍历selector上所有的SelectorKey：监听事件集合
+            Channel connectClient=key.channel();//监听事件对应的通道
+            if(connectClient instanceof ServerSocketChannel){//如果是服务器端的通道，就不处理
                 continue;
             }
-            if(key.isValid()&&!client.equals(connectClient)){
-                wBuffer.clear();
+            if(key.isValid()&&!client.equals(connectClient)){//转发给其它connectClient
+                wBuffer.clear();//切换到写模式
                 //把来自客户端的消息放入wBuffer
-                wBuffer.put(charset.encode(getClientName(client)+":"+fwdMsg));
+                wBuffer.put(charset.encode(getClientName(client)+":"+fwdMsg));//写
                 wBuffer.flip();//写模式切换成读模式
                 while (wBuffer.hasRemaining()){
                     ((SocketChannel)connectClient).write(wBuffer);//写入其它通道
@@ -113,11 +113,9 @@ public class ChatServer {
     }
     //服务器收到来自客户端的消息  有什么用rBuffer？？:读取来自客户端的消息
     private String receive(SocketChannel client) throws IOException {
-        rBuffer.clear();
+        rBuffer.clear();//切换到写模式
         while(client.read(rBuffer)>0);//rBuffer处于写模式
         rBuffer.flip();//写模式切换到读模式
-
-
         return String.valueOf(charset.decode(rBuffer));
     }
 
